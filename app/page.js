@@ -1,95 +1,112 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import Image from "next/image";
 
-export default function Home() {
+import Header from "@/components/header/Header";
+import Hero from "@/components/home/Hero";
+import Features from "@/components/home/Features";
+import Timeline from "@/components/home/Timeline";
+import IntroAction from "@/components/home/IntroAction";
+import IntroVideo from "@/components/home/IntroVideo";
+import Counter from "@/components/home/Counter";
+import BrandSlider from "@/components/home/BrandSlider";
+import CallToAction from "@/components/home/CallToAction";
+import Footer from "@/components/footer";
+import Tokenomics from "@/components/home/Tokenomics";
+
+const charity = () => {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="pattern-bg-one">
+      {/* <!--  =============================================
+        Theme Header Menu
+        ============================================== 	--> */}
+      <Header />
+
+      {/* 
+        =============================================
+        Theme Hero Banner
+        ============================================== 
+        */}
+      <Hero />
+
+      {/* 
+        =============================================
+        Feature Section Fourteen
+        ============================================== 
+        */}
+      <div className="fancy-feature-fourteen position-relative">
+        <div className="container">
+          <div className="row">
+            <Features />
+          </div>
         </div>
       </div>
 
-      <div className={styles.center}>
+      {/* 
+        =============================================
+        Feature Section Fifteen
+        ============================================== 
+        */}
+      <div className="fancy-feature-fifteen  mt-140 lg-mt-70">
         <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          src="/images/shape/shape_76.svg"
+          alt="shape"
+          width={163}
+          height={233}
+          className="lazy-img shapes shape-one"
         />
+        <div className="container">
+          <IntroAction />
+          <IntroVideo />
+          <Counter />
+        </div>
+        {/* /.container */}
       </div>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      {/* 
+        =============================================
+        Timeline Section Fourteen
+        ============================================== 
+        */}
+      <div className="container mt-40">
+        <div className="row">
+          <Timeline />
+        </div>
       </div>
-    </main>
-  )
-}
+
+      <Tokenomics />
+
+      {/* 
+			=============================================
+				Partner Section Three
+			============================================== 
+			*/}
+      <div className="partner-section-three position-relative pt-170 lg-pt-100">
+        <div className="container">
+          <div className="title tx-dark text-uppercase text-center mb-55 lg-mb-30">
+            Over <span>200+</span> partner currently have us
+          </div>
+          <div className="partner_slider_one row">
+            <BrandSlider />
+          </div>
+        </div>
+        {/* /.container */}
+      </div>
+
+      {/*
+			=====================================================
+				CalltoActions Banner Seven
+			=====================================================
+			*/}
+      <CallToAction />
+
+      {/*
+			=====================================================
+				Footer
+			=====================================================
+			*/}
+      <Footer />
+    </div>
+    // End page wrapper
+  );
+};
+
+export default charity;
